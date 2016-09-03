@@ -4,6 +4,23 @@
   <strong>Номер:</strong>
   <%= @train.number %>
 </p>
+<p>
+  <% if @train.current_station.present? %>
+    <strong>Текущая станция:</strong>
+    <%= @train.current_station.title %>
+  <% else %>
+    Станция не назначена
+  <% end %>
+</p>
+
+<p>
+  <% if @train.route.present? %>
+  <strong>Поезд на маршруте:</strong>
+    <%= @train.route.name %>
+  <% else %>
+    Маршрут не назначен
+  <% end %>
+</p>
 
 <%= link_to 'Редактировать', edit_train_path(@train) %> |
 <%= link_to 'Назад', trains_path %>

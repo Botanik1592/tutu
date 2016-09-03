@@ -9,6 +9,33 @@
   </head>
 
   <body>
+    <div style="width: 100%, padding-left: 50px; height: 30px">
+      <table border="0" cellpadding="5px", cellspacing="0px">
+        <tr>
+          <td>
+            <%= link_to 'Главная', root_path %>
+          </td>
+          <td>|</td>
+          <td>
+            <%= link_to 'Станции', railway_stations_path %>
+          </td>
+          <td>|</td>
+          <td>
+            <%= link_to 'Поезда', trains_path %>
+          </td>
+          <td>|</td>
+          <td>
+            <%= link_to 'Маршруты', routes_path %>
+          </td>
+        </tr>
+      </table>
+    </div>
     <%= yield %>
+
+    <div style="position: absolute; width: 100%; text-align: center; bottom: 0px">
+      <p>
+        (c) 2016 <a href='http://buryka.ru/' target='_blank'>Anton Buryka</a>. Учебный проект в <a href='http://thinknetica.com' target='_blank'>онлайн-школе Thinknetica.</a>
+      </p>
+    </div>
   </body>
 </html>
