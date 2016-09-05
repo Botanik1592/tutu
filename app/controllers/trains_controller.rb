@@ -6,6 +6,25 @@ class TrainsController < ApplicationController
   end
 
   def show
+    @kupe = []
+    @plac = []
+    @kupe_top_places = 0
+    @kupe_lower_places = 0
+    @plac_top_places = 0
+    @plac_lower_places = 0
+
+    @train.wagons.each do |wagon|
+      if wagon.wagon_type.wagon_type == "Купейный"
+        @kupe << wagon
+        @kupe_top_places = @kupe_top_places + wagon.top_places
+        @kupe_lower_places = @kupe_lower_places + wagon.lower_places
+      else
+        @plac << wagon
+        @plac_top_places = @plac_top_places + wagon.top_places
+        @plac_lower_places = @plac_lower_places + wagon.lower_places
+      end
+    end
+
   end
 
   def new
@@ -40,6 +59,7 @@ class TrainsController < ApplicationController
   end
 
   private
+
     def set_train
       @train = Train.find(params[:id])
     end

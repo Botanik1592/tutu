@@ -3,22 +3,39 @@
 <p>
   <strong>Номер:</strong>
   <%= @train.number %>
-</p>
-<p>
+  <br />
+  <br />
   <% if @train.current_station.present? %>
     <strong>Текущая станция:</strong>
     <%= @train.current_station.title %>
   <% else %>
     Станция не назначена
   <% end %>
-</p>
-
-<p>
+  <br />
+  <br />
   <% if @train.route.present? %>
   <strong>Поезд на маршруте:</strong>
     <%= @train.route.name %>
   <% else %>
     Маршрут не назначен
+  <% end %>
+  <br />
+  <br />
+  <% if @train.wagons.present? %>
+    <strong>Купейных вагонов:</strong> <%= @kupe.size %>
+    <br />
+    Верхних мест: <%= @kupe_top_places %>
+    <br />
+    Нижних мест: <%= @kupe_lower_places %>
+    <br />
+    <br />
+    <strong>Плацкартных вагонов</strong> <%= @plac.size %>
+    <br />
+    Верхних мест: <%= @plac_top_places %>
+    <br />
+    Нижних мест: <%= @plac_lower_places %>
+  <% else %>
+    Вагоны не добавлены
   <% end %>
 </p>
 
