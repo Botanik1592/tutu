@@ -6,6 +6,7 @@ class TrainsController < ApplicationController
   end
 
   def show
+    @wagons_types = WagonType.all
   end
 
   def new
@@ -40,6 +41,7 @@ class TrainsController < ApplicationController
   end
 
   private
+
     def set_train
       @train = Train.find(params[:id])
     end
