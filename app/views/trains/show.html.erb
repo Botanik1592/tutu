@@ -22,18 +22,14 @@
   <br />
   <br />
   <% if @train.wagons.present? %>
-    <strong>Купейных вагонов:</strong> <%= @kupe.size %>
-    <br />
-    Верхних мест: <%= @kupe_top_places %>
-    <br />
-    Нижних мест: <%= @kupe_lower_places %>
-    <br />
-    <br />
-    <strong>Плацкартных вагонов</strong> <%= @plac.size %>
-    <br />
-    Верхних мест: <%= @plac_top_places %>
-    <br />
-    Нижних мест: <%= @plac_lower_places %>
+    <% @wagons_types.each do |wagon| %>
+      <strong><%= wagon.wagon_type %>:</strong> <%= @train.show_wagons(@train, wagon.wagon_type) %> шт.
+      <br />
+      Верхних мест: <%= @train.show_places(@train.wagons, wagon.wagon_type, "top") %>
+      <br />
+      Нижних мест: <%= @train.show_places(@train.wagons, wagon.wagon_type, "lower") %>
+      <br />
+    <% end %>
   <% else %>
     Вагоны не добавлены
   <% end %>
