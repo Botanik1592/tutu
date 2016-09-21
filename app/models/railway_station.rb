@@ -6,4 +6,15 @@ class RailwayStation < ApplicationRecord
   has_many :routes, through: :railway_stations_routes
 
   validates :title, presence: true
+
+  def set_position(route, position)
+    st_route = railway_stations_routes.where(route_id: route).first
+    st_route.position = position.to_i
+    st_route.save
+  end
+
+  def get_position(route)
+    st_route = railway_stations_routes.where(route_id: route).first
+    st_route.position
+  end
 end
