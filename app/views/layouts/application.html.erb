@@ -9,7 +9,6 @@
   </head>
 
   <body>
-    <div class="site"
     <div class="header">
       <table border="0" cellpadding="5px", cellspacing="0px">
         <tr>
@@ -33,7 +32,9 @@
     </div>
 
     <div class="container">
-      <%= yield %>
+      <div rel="main">
+        <%= yield %>
+      </div>
     </div>
 
     <div class="footer">
