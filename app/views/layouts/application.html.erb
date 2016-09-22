@@ -9,7 +9,8 @@
   </head>
 
   <body>
-    <div style="width: 100%, padding-left: 50px; height: 30px">
+    <div class="site"
+    <div class="header">
       <table border="0" cellpadding="5px", cellspacing="0px">
         <tr>
           <td>
@@ -27,19 +28,19 @@
           <td>
             <%= link_to 'Маршруты', routes_path %>
           </td>
-          <td>|</td>
-          <td>
-            <%= link_to 'Вагоны', wagons_path %>
-          </td>
         </tr>
       </table>
     </div>
-    <%= yield %>
 
-    <div style="position: absolute; width: 100%; text-align: center; bottom: 0px">
-      <p>
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <div class="footer">
+
         (c) 2016 <a href='http://buryka.ru/' target='_blank'>Anton Buryka</a>. Учебный проект в <a href='http://thinknetica.com' target='_blank'>онлайн-школе Thinknetica.</a>
-      </p>
+
+    </div>
     </div>
   </body>
 </html>

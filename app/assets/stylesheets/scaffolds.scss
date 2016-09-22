@@ -1,10 +1,45 @@
+.footer {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  left: 0px;
+  bottom: 0px;
+  background-color: #B8B8B8;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  height: 50px;
+
+  background-color: #B8B8B8;
+}
+
+.container {
+  margin-botom: 70px;
+  margin-top: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+}
+
+html {
+  height: 100%;
+}
+
+.site {
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+}
+
 body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-  margin: 33px;
+  font-size: 14px;
 }
 
 p, ol, ul, td {
@@ -22,14 +57,17 @@ pre {
 
 a {
   color: #000;
+  font-size: 14px;
 
   &:visited {
     color: #666;
+    font-size: 14px;
   }
 
   &:hover {
     color: #fff;
     background-color: #000;
+    font-size: 14px;
   }
 }
 
@@ -45,7 +83,7 @@ td {
 
 div {
   &.field, &.actions {
-    margin-bottom: 10px;
+
   }
 }
 

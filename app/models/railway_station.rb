@@ -7,14 +7,16 @@ class RailwayStation < ApplicationRecord
 
   validates :title, presence: true
 
+  scope :ordered, -> { order("railway_stations_routes.position") }
+
   def set_position(route, position)
-    st_route = railway_stations_routes.where(route_id: route).first
+    st_route = self.railway_stations_routes.where(route_id: route).first
     st_route.position = position.to_i
     st_route.save
   end
 
   def get_position(route)
-    st_route = railway_stations_routes.where(route_id: route).first
+    st_route = self.railway_stations_routes.where(route_id: route).first
     st_route.position
   end
 end
