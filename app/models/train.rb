@@ -9,23 +9,18 @@ class Train < ApplicationRecord
   def show_wagons(train, type)
     wagons = []
 
-    train.wagons.each do |wagon|
+    self.wagons.each do |wagon|
       wagons << wagon if wagon.wagon_type.wagon_type == type
     end
     wagons.size
   end
 
-  def show_places(wagons, type, places)
-    count = 0
-    if places == "top"
-      wagons.each do |wagon|
-        count = count + wagon.top_places if wagon.wagon_type.wagon_type == type
-      end
-    else
-      wagons.each do |wagon|
-        count = count + wagon.lower_places if wagon.wagon_type.wagon_type == type
-      end
-    end
-    count
+  def show_places(wagon_type, places_type)
+    self.wagons.where(type: wagon_type).sum(places_type)
   end
+
+  def wagons_order
+    self.head ? wagons.ordered.reverse : wagons.ordered
+  end
+
 end

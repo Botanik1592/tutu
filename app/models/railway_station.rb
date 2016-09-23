@@ -6,4 +6,23 @@ class RailwayStation < ApplicationRecord
   has_many :routes, through: :railway_stations_routes
 
   validates :title, presence: true
+
+  scope :ordered, -> { order("railway_stations_routes.position") }
+
+  def set_position(route, position)
+    st_route = get_station_route(route)
+    st_route.position = position
+    st_route.save
+  end
+
+  def position(route)
+    st_route = get_station_route(route)
+    st_route.position
+  end
+
+  private
+
+  def get_station_route(route)
+    self.railway_stations_routes.where(route_id: route).first
+  end
 end

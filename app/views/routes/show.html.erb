@@ -1,35 +1,51 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Название:</strong>
-  <%= @route.name %>
-</p>
-
-<p>
-  <strong>Поезда на маршруте:</strong>
+<div>
+  <h2><%= @route.name %></h2>
+</div>
+<hr>
+<div>
+  <h3>Поезда на маршруте:</h3>
   <% if @route.trains.empty? %>
     Поезда отсутствуют
   <% else %>
-    <ul>
-      <% @route.trains.each do |train| %>
-        <li><%= train.number %></li>
-      <% end %>
-    </ul>
+    <table>
+    <% @route.trains.each do |train| %>
+      <tr>
+        <td> № </td>
+        <td><%= link_to train.number, edit_train_path(train) %></td>
+      </tr>
+    <% end %>
+    </table>
   <% end %>
-</p>
+</div>
 
-<p>
-  <strong>Станции маршрута:</strong>
+<div>
+  <h3>Станции маршрута:</h3>
   <% if @route.railway_stations.empty? %>
     Станции не назначены
   <% else %>
-    <ul>
-      <% @route.railway_stations.each do |station| %>
-        <li><%= station.title %></li>
-      <% end %>
-    </ul>
+    <table>
+    <% @route.railway_stations.ordered.each do |station| %>
+      <tr>
+        <td><%= link_to station.title, edit_railway_station_path(station) %></td>
+        <td><%= station.id %></td>
+        <td>
+          <%= form_tag update_position_path do %>
+            <%= hidden_field_tag :station, station.id %>
+            <%= text_field_tag :position, station.position(@route), size: 3 %>
+            <%= submit_tag 'Установить' %>
+          <% end %>
+        </td>
+      <tr>
+    <% end %>
+    </table>
   <% end %>
-</p>
+</div>
 
-<%= link_to 'Редактировать', edit_route_path(@route) %> |
-<%= link_to 'Назад', routes_path %>
+<br />
+<hr>
+<div>
+  <%= link_to 'Редактировать', edit_route_path(@route) %> |
+  <%= link_to 'Назад', routes_path %>
+</div>

@@ -33,6 +33,13 @@ class RailwayStationsController < ApplicationController
     end
   end
 
+  def update_position
+    route = Route.find(params[:id])
+    station = RailwayStation.find(params[:station])
+    station.set_position(route, params[:position])
+    redirect_to route
+  end
+
   def destroy
     @railway_station.destroy
       redirect_to railway_stations_url, notice: 'Станция успешно удалена'
