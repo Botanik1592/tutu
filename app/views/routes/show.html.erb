@@ -33,7 +33,7 @@
         <td>
           <%= form_tag update_position_path do %>
             <%= hidden_field_tag :station, station.id %>
-            <%= text_field_tag :position, station.get_position(@route), size: 3 %>
+            <%= text_field_tag :position, station.position(@route), size: 3 %>
             <%= submit_tag 'Установить' %>
           <% end %>
         </td>
