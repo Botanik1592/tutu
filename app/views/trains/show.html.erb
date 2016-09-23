@@ -59,12 +59,12 @@
       <td><b>Кол-во сидячих мест</b></td>
     </tr>
      <% if @train.wagons.present? %>
-      <% Wagon::TYPES.each do |wagon_type, wagon_name| %>
+      <% WagonType.all.each do |wagon| %>
         <tr>
-          <td><b><%= wagon_name %>:</b>(<%= @train.wagons.where(type: wagon_type).size %> шт.)</td>
+          <td><b><%= wagon.title %>:</b>(<%= @train.wagons.where(type: wagon.wagon_type).size %> шт.)</td>
           <% Wagon::PLACES.each do |place_type, place_name| %>
           <td align="center">
-            <%= @train.show_places(wagon_type, place_type) %>
+            <%= @train.show_places(wagon.wagon_type, place_type) %>
           </td>
           <% end %>
         </tr>

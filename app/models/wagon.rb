@@ -1,5 +1,4 @@
 class Wagon < ApplicationRecord
-  TYPES = { CoupeWagon: 'Купе', EconomyWagon: 'Плацкарт', VipWagon: 'СВ', SeatsWagon: 'Сидячий' }
   PLACES = { top_places: 'Верхние места', lower_places: 'Нижние места', side_top_places: 'Боковые верхние места', side_lower_places: 'Боковые нижние места', seats: 'Сидячие места'}
 
   belongs_to :train

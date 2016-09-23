@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :railway_stations
   resources :routes
   resources :wagons
+  resources :wagon_types
+
 
   post 'update_position/:id', to: 'railway_stations#update_position', as: 'update_position'
 

@@ -3,7 +3,7 @@
   <%= hidden_field_tag :train_id, @train.id %>
   <%= render 'common/errors', resource: @wagon %>
   <%= f.label :type, "Тип:" %>
-  <%= f.select :type, options_for_select( [:EconomyWagon, :CoupeWagon, :VipWagon, :SeatsWagon], @wagon.type ) %>
+  <%= f.collection_select :type, WagonType.all, :wagon_type, :title  %>
   <br><br>
   <%= f.label :top_places, "Кол-во верхних мест:" %>
   <%= f.text_field :top_places %>
