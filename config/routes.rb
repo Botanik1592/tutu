@@ -3,13 +3,18 @@ Rails.application.routes.draw do
     resources :wagons, shallow: true
   end
 
-  resources :railway_stations
+  resources :railway_stations do
+    patch :update_position, on: :member
+    patch :update_arrival_time, on: :member
+    patch :update_departure_time, on: :member
+  end
+
   resources :routes
   resources :wagons
   resources :wagon_types
 
+  resource :search, only: [:show, :create]
 
-  post 'update_position/:id', to: 'railway_stations#update_position', as: 'update_position'
 
   get 'welcome/index'
 

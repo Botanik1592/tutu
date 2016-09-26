@@ -1,0 +1,52 @@
+<% if @error !="" %>
+  <p>
+    <font color="red"><b><%= @error %></b></font>
+  </p>
+<% end %>
+
+<h1>Поиск билетов</h1>
+
+  <%= form_for search_path, method: :post do%>
+      <p>
+        <label>Начальная станция:</label>
+        <%= select_tag :first_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:first_station_id]) %>
+      </p>
+
+      <p>
+        <label>Конечная станция:</label>
+        <%= select_tag :last_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:last_station_id]) %>
+      </p>
+    </div>
+
+    <%= submit_tag 'Поиск' %>
+  <% end %>
+
+
+
+  <% if @trains.present? %>
+    <h2>Список поездов</h2>
+    <table>
+      <thead>
+        <tr>
+          <td><b>Номер</b></td>
+          <td><b>Маршрут</b></td>
+          <td><b>Время отправления</b></td>
+          <td><b>Время прибытия</b></td>
+          <td></td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @trains.each do |train| %>
+          <tr>
+            <td> <%= train.number %> </td>
+            <td> <%= train.route.name %> </td>
+            <td> <%= train.route.railway_stations.first.departure_time(train.route) %> </td>
+            <td> <%= train.route.railway_stations.first.arrival_time(train.route) %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% else %>
+      По данному направлению билетов не найдено!
+  <% end %>
