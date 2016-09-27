@@ -21,8 +21,6 @@
     <%= submit_tag 'Поиск' %>
   <% end %>
 
-
-
   <% if @trains.present? %>
     <h2>Список поездов</h2>
     <table>
@@ -39,10 +37,16 @@
       <tbody>
         <% @trains.each do |train| %>
           <tr>
-            <td> <%= train.number %> </td>
-            <td> <%= train.route.name %> </td>
-            <td> <%= train.route.railway_stations.first.departure_time(train.route) %> </td>
-            <td> <%= train.route.railway_stations.first.arrival_time(train.route) %> </td>
+            <%= form_tag order_tickets_path do %>
+              <td> <%= train.number %> </td>
+              <%= hidden_field_tag :train_id, train.id %>
+              <td> <%= train.route.name %> </td>
+              <td> <%= train.route.railway_stations.first.departure_time(train.route).try(:strftime, "%H:%M") %> </td>
+              <%= hidden_field_tag :first_station_id, train.route.railway_stations.first.id %>
+              <td> <%= train.route.railway_stations.first.arrival_time(train.route).try(:strftime, "%H:%M") %> </td>
+              <%= hidden_field_tag :last_station_id, train.route.railway_stations.last.id %>
+              <td><%= submit_tag 'Купить' %></td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>

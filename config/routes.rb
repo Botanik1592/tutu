@@ -15,6 +15,12 @@ Rails.application.routes.draw do
 
   resource :search, only: [:show, :create]
 
+  resources :users
+
+  resources :tickets, only: [:show, :create] do
+    post :order, on: :collection
+  end
+
 
   get 'welcome/index'
 
