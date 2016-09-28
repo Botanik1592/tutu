@@ -37,25 +37,25 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-              <li>
-                <% if user_signed_in? %>
-                  <ul class="nav navbar-nav">
-                    <li><%= link_to current_user.email, edit_user_registration_path %></li>
-                    <% if current_user.admin? %>
-                      <li><%= link_to 'Админ-Панель', admin_adminpanel_index_path %></li>
-                    <% end %>
-                    <li><%= link_to 'Выход', destroy_user_session_path, method: :delete %></li>
-                  </ul>
-                <% else %>
-                  <%= link_to 'Вход', new_user_session_path %>
+              <% if user_signed_in? %>
+                <li><p class="navbar-text">Привет, <%= current_user.name %>!</p></li>
+                <li><%= link_to current_user.email, edit_user_registration_path %></li>
+                <% if current_user.admin? %>
+                  <li><%= link_to 'Админ-Панель', admin_adminpanel_index_path %></li>
                 <% end %>
-              </li>
+                <li><%= link_to 'Выход', destroy_user_session_path, method: :delete %></li>
+              <% else %>
+                <li><%= link_to 'Вход', new_user_session_path %></li>
+              <% end %>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
 
       <div>
+        <% if user_signed_in? %>
+          <p>Привет, <%= current_user.name %>!</p>
+        <% end %>
         <% if notice.present? %>
           <div id="notice" class="alert alert-success" role="alert"><%= notice %></div>
         <% end %>

@@ -1,4 +1,4 @@
-<%= form_for @ticket do |f| %>
+<%= form_for [:admin, @ticket] do |f| %>
     <%= render 'common/errors', resource: @ticket %>
     <%= f.hidden_field :train_id %>
     <%= f.hidden_field :first_station_id %>
@@ -9,6 +9,6 @@
     <%= f.label :passport, "Паспорт (серия/номер):" %>
     <%= f.text_field :passport %>
     <br /><br />
-    <%= f.submit 'Оформить'%>
+    <%= f.submit 'Отправить'%>
   <% end %>
 

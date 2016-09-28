@@ -19,7 +19,7 @@ class TicketsController < ApplicationController
     end
   end
 
-    def destroy
+  def destroy
     @ticket.destroy
       redirect_to tickets_url, notice: 'Поезд успешно удален.'
   end
