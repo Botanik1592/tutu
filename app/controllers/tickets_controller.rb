@@ -9,7 +9,6 @@ class TicketsController < ApplicationController
   end
 
   def create
-    @user = User.new
     @ticket = Ticket.new(ticket_params)
 
     if @ticket.save

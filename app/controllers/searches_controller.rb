@@ -9,8 +9,7 @@ class SearchesController < ApplicationController
       @error = "Начальная и конечная станции не могут совпадать!"
       render :show
     else
-      @user = User.new
-      @user.save
+      @user = User.create
       @trains = Search.search_trains(params[:first_station_id], params[:last_station_id])
       render :show
     end

@@ -21,25 +21,25 @@ class RailwayStation < ApplicationRecord
   end
 
   def arrival_time(route)
-    ar_time = get_station_route(route)
-    ar_time.arrival_time
+    st_route = get_station_route(route)
+    st_route.arrival_time
   end
 
   def departure_time(route)
-    dp_time = get_station_route(route)
-    dp_time.departure_time
+    st_route = get_station_route(route)
+    st_route.departure_time
   end
 
   def set_arrival_time(route, ariv_time)
-    ar_time = get_station_route(route)
-    ar_time.arrival_time = ariv_time
-    ar_time.save
+    st_route = get_station_route(route)
+    st_route.arrival_time = ariv_time
+    st_route.save
   end
 
   def set_departure_time(route, depart_time)
-    dp_time = get_station_route(route)
-    dp_time.departure_time = depart_time
-    dp_time.save
+    st_route = get_station_route(route)
+    st_route.departure_time = depart_time
+    st_route.save
   end
 
 
