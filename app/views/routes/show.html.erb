@@ -26,14 +26,33 @@
     Станции не назначены
   <% else %>
     <table>
+    <tr>
+      <td><b>Название станции</b></td>
+      <td><b>Порядковый номер в маршруте</b></td>
+      <td><b>Время прибытия</b></td>
+      <td><b>Время отправления</b></td>
+    </tr>
     <% @route.railway_stations.ordered.each do |station| %>
       <tr>
         <td><%= link_to station.title, edit_railway_station_path(station) %></td>
-        <td><%= station.id %></td>
         <td>
-          <%= form_tag update_position_path do %>
-            <%= hidden_field_tag :station, station.id %>
+          <%= form_tag update_position_railway_station_path(station), method: :patch do %>
+            <%= hidden_field_tag :route_id, @route.id %>
             <%= text_field_tag :position, station.position(@route), size: 3 %>
+            <%= submit_tag 'Установить' %>
+          <% end %>
+        </td>
+        <td>
+          <%= form_tag update_arrival_time_railway_station_path(station), method: :patch do %>
+            <%= hidden_field_tag :route_id, @route.id %>
+            <%= time_field_tag :arrival_time, station.arrival_time(@route).try(:strftime, "%H:%M") %>
+            <%= submit_tag 'Установить' %>
+          <% end %>
+        </td>
+        <td>
+          <%= form_tag update_departure_time_railway_station_path(station), method: :patch do %>
+            <%= hidden_field_tag :route_id, @route.id %>
+            <%= time_field_tag :departure_time, station.departure_time(@route).try(:strftime, "%H:%M") %>
             <%= submit_tag 'Установить' %>
           <% end %>
         </td>

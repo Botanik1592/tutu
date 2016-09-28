@@ -1,0 +1,34 @@
+<h1>Билет</h1>
+<p id="notice"><%= notice %></p>
+<p>
+  <table border='1'>
+    <thead>
+      <tr align="center">
+        <td><b>Номер билета</b></td>
+        <td><b>ФИО</b></td>
+        <td><b>Паспорт</b></td>
+        <td><b>Номер поезда</b></td>
+        <td><b>Маршрут</b></td>
+        <td><b>Станция отправления</b></td>
+        <td><b>Станция назначения</b></td>
+        <td><b>Время отправления</b></td>
+        <td><b>Время прибытия</b></td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr align="center">
+        <td><%= @ticket.number %></td>
+        <td><%= @ticket.user_name %></td>
+        <td><%= @ticket.passport %></td>
+        <td><%= @ticket.train.number %></td>
+        <td><%= @ticket.train.route.name %></td>
+        <td><%= @ticket.train.route.railway_stations.first.title %></td>
+        <td><%= @ticket.train.route.railway_stations.last.title %></td>
+        <td><%= @ticket.train.route.railway_stations.first.arrival_time(@ticket.train.route).try(:strftime, "%H:%M") %></td>
+        <td><%= @ticket.train.route.railway_stations.first.departure_time(@ticket.train.route).try(:strftime, "%H:%M") %></td>
+      </tr>
+    </tbody>
+  </table>
+</p>
+

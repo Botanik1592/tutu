@@ -51,5 +51,5 @@ class WagonsController < ApplicationController
 
     def set_train
       @train = Train.find(params[:train_id])
-  end
+    end
 end

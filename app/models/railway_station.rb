@@ -20,9 +20,32 @@ class RailwayStation < ApplicationRecord
     st_route.position
   end
 
+  def arrival_time(route)
+    st_route = get_station_route(route)
+    st_route.arrival_time
+  end
+
+  def departure_time(route)
+    st_route = get_station_route(route)
+    st_route.departure_time
+  end
+
+  def set_arrival_time(route, ariv_time)
+    st_route = get_station_route(route)
+    st_route.arrival_time = ariv_time
+    st_route.save
+  end
+
+  def set_departure_time(route, depart_time)
+    st_route = get_station_route(route)
+    st_route.departure_time = depart_time
+    st_route.save
+  end
+
+
   private
 
   def get_station_route(route)
-    self.railway_stations_routes.where(route_id: route).first
+    @station_route ||= self.railway_stations_routes.where(route_id: route).first
   end
 end
