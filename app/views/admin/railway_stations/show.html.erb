@@ -1,0 +1,14 @@
+<h2>Название:</h2>
+<%= @railway_station.title %>
+<br /><br />
+<h2>Маршруты:</h2>
+  <% if @railway_station.routes.empty? %>
+    Станция не входит ни в один маршрут
+  <% else %>
+    <% @railway_station.routes.each_with_index do |route, i| %>
+      <%= "№#{i+1}) #{route.name}" %><br />
+    <% end %>
+  <% end %>
+<br /><br />
+<%= link_to 'Редактировать', edit_admin_railway_station_path(@railway_station) %> |
+<%= link_to 'Назад', admin_railway_stations_path %>

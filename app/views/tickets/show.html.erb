@@ -1,11 +1,10 @@
 <h1>Билет</h1>
-<p id="notice"><%= notice %></p>
 <p>
   <table border='1'>
     <thead>
       <tr align="center">
-        <td><b>Номер билета</b></td>
         <td><b>ФИО</b></td>
+        <td><b>Email</b></td>
         <td><b>Паспорт</b></td>
         <td><b>Номер поезда</b></td>
         <td><b>Маршрут</b></td>
@@ -18,8 +17,8 @@
 
     <tbody>
       <tr align="center">
-        <td><%= @ticket.number %></td>
         <td><%= @ticket.user_name %></td>
+        <td><%= @ticket.user.email %></td>
         <td><%= @ticket.passport %></td>
         <td><%= @ticket.train.number %></td>
         <td><%= @ticket.train.route.name %></td>

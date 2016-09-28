@@ -1,0 +1,19 @@
+<div>
+  <h3>Номер:</h3>
+  <%= @wagon.number %>
+
+  <h3>Добавлен к поезду:</h3>
+  <%= @wagon.train.number %>
+
+  <h3>Тип вагона:</h3>
+  <%= @wagon.type.to_s %>
+</div>
+
+<div>
+  <%= render @wagon.type.underscore, wagon: @wagon %>
+</div>
+<br />
+<hr>
+
+<%= link_to 'Редактировать', edit_admin_wagon_path(@wagon, train_id: @wagon.train.id) %> |
+<%= link_to 'Назад', [:admin, @wagon.train] %>

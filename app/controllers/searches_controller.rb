@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-
+  before_action :authenticate_user!, only: [:create]
   def show
 
   end
@@ -9,7 +9,7 @@ class SearchesController < ApplicationController
       @error = "Начальная и конечная станции не могут совпадать!"
       render :show
     else
-      @user = User.create
+      @user = current_user
       @trains = Search.search_trains(params[:first_station_id], params[:last_station_id])
       render :show
     end

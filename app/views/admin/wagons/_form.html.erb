@@ -1,0 +1,27 @@
+  <div >
+<%= form_for [:admin, @train_wagons_path, wagon.becomes(Wagon)] do |f| %>
+  <%= hidden_field_tag :train_id, @train.id %>
+  <%= render 'common/errors', resource: @wagon %>
+  <%= f.label :type, "Тип:" %>
+  <%= f.collection_select :type, WagonType.all, :wagon_type, :title  %>
+  <br><br>
+  <%= f.label :top_places, "Кол-во верхних мест:" %>
+  <%= f.text_field :top_places %>
+  <br><br>
+  <%= f.label :lower_places, "Кол-во нижних мест:" %>
+  <%= f.text_field :lower_places %>
+  <br><br>
+  <%= f.label :side_top_places, "Кол-во боковых верхних мест:" %>
+  <%= f.text_field :side_top_places %>
+  <br><br>
+  <%= f.label :side_lower_places, "Кол-во боковых нижних мест:" %>
+  <%= f.text_field :side_lower_places %>
+  <br><br>
+  <%= f.label :seats, "Кол-во сидячих мест:" %>
+  <%= f.text_field :seats %>
+  <br><br>
+
+  <%= f.submit "#{ @wagon.new_record? ? 'Создать' : 'Изменить'}"%>
+</div>
+
+<% end %>

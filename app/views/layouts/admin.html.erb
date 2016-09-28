@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TuTu - Административная панель</title>
+
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body style="padding-bottom: 70px;">
+    <div class="container">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><%= link_to 'Админка', admin_adminpanel_index_path %></li>
+              <li><%= link_to 'Станции', admin_railway_stations_path %></li>
+              <li><%= link_to 'Поезда', admin_trains_path %></li>
+              <li><%= link_to 'Маршруты', admin_routes_path %></li>
+              <li><%= link_to 'Типы вагонов', admin_wagon_types_path %></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <% if user_signed_in? %>
+                  <ul class="nav navbar-nav">
+                    <li><%= link_to current_user.email, edit_user_registration_path %></li>
+                    <li><%= link_to 'Выход', destroy_user_session_path, method: :delete %></li>
+                  </ul>
+                <% else %>
+                  <%= link_to 'Вход', new_user_session_path %>
+                <% end %>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+      <div>
+        <% if notice.present? %>
+          <div id="notice" class="alert alert-success" role="alert"><%= notice %></div>
+        <% end %>
+        <% if alert.present? %>
+          <div class="alert alert-danger" role="alert"><%= alert %></div>
+        <% end %>
+        <%= yield %>
+      </div>
+
+      <nav class="navbar navbar--inverse navbar-fixed-bottom">
+        <div class="container" style="text-align: center;">
+          <p class="navbar-text" style="width: 100%; text-align: center;">
+          <font color="e7e7e7">(c) 2016 <a href='http://buryka.ru/' target='_blank' class="footer">Anton Buryka</a>. Учебный проект в <a href='http://thinknetica.com' target='_blank' class="footer">онлайн-школе Thinknetica.</a></font>
+          </p>
+        </div>
+      </nav>
+
+    </div>
+  </body>
+</html>

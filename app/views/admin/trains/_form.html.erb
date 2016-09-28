@@ -1,0 +1,18 @@
+<%= form_for [:admin, train] do |f| %>
+  <%= render 'common/errors', resource: @train %>
+  <div>
+    <%= f.label :number, "Номер:" %>
+    <%= f.text_field :number %>
+    <br /><br />
+    <%= f.label :current_station, "Текущая станция:" %>
+    <%= f.collection_select :current_station_id, RailwayStation.all, :id, :title %>
+    <br /><br />
+    <%= f.label :route, "Маршрут:" %>
+    <%= f.collection_select :route_id, Route.all, :id, :name %>
+    <br /><br />
+    <%= f.label :head, "Нумерация c хвоста:" %>
+    <%= f.check_box :head %>
+    <br /><br />
+    <%= f.submit "#{ @train.new_record? ? 'Создать' : 'Изменить'}"%>
+  </div>
+<% end %>
