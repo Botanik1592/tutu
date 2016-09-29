@@ -54,4 +54,7 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :letter_opener
+
+  config.i18n.default_locale = :ru
+  config.i18n.locale = :ru
 end
