@@ -1,19 +1,21 @@
 <h1>Оформление заказа</h1>
 <div>
   <h2>Параметры заказа</h2>
-  <table>
-    <tr align="center">
-      <td><b>Поезд №</b></td>
-      <td><b>Маршрут</b></td>
-      <td><b>Станция отправления</b></td>
-      <td><b>Станция назначения</b></td>
-    </tr>
+  <table class="table table-striped">
+    <thead>
+      <th>Поезд №</th>
+      <th>Маршрут</th>
+      <th>Станция отправления</th>
+      <th>Станция назначения</th>
+    </thead>
+    <tbody>
     <tr align="center">
       <td><%= @ticket.train.number %></td>
       <td><%= @ticket.train.route.name %></td>
       <td><%= @ticket.train.route.railway_stations.first.title %></td>
       <td><%= @ticket.train.route.railway_stations.last.title %></td>
     </tr>
+    </tbody>
   </table>
 </div>
 <div>

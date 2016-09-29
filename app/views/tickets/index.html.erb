@@ -1,27 +1,22 @@
 <h1>Билеты</h1>
 <p>
-  <table border='1'>
+  <table class="table table-striped">
     <thead>
-      <tr align="center">
-        <td><b>Номер билета</b></td>
-        <td><b>ФИО</b></td>
-        <td><b>Email</b></td>
-        <td><b>Паспорт</b></td>
-        <td><b>Номер поезда</b></td>
-        <td><b>Маршрут</b></td>
-        <td><b>Станция отправления</b></td>
-        <td><b>Станция назначения</b></td>
-        <td><b>Время отправления</b></td>
-        <td><b>Время прибытия</b></td>
-        <td></td>
-        <td></td>
-      </tr>
+      <th>ФИО</th>
+      <th>Email</th>
+      <th>Паспорт</th>
+      <th>Номер поезда</th>
+      <th>Маршрут</th>
+      <th>Станция отправления</th>
+      <th>Станция назначения</th>
+      <th>Время отправления</th>
+      <th>Время прибытия</th>
+      <th colspan="2"></th>
     </thead>
 
     <tbody>
-      <% current_user.tickets.each_with_index do |ticket, i| %>
+      <% current_user.tickets.each do |ticket| %>
       <tr align="center">
-        <td><%= i+1 %></td>
         <td><%= ticket.user_name %></td>
         <td><%= ticket.user.email %></td>
         <td><%= ticket.passport %></td>

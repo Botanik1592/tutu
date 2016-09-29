@@ -1,37 +1,32 @@
 <% if @error !="" %>
-  <p>
+  <div>
     <font color="red"><b><%= @error %></b></font>
-  </p>
+  </div>
 <% end %>
-
+<div>
 <h1>Поиск билетов</h1>
 
   <%= form_for search_path, method: :post do%>
-      <p>
-        <label>Начальная станция:</label>
-        <%= select_tag :first_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:first_station_id]) %>
-      </p>
-
-      <p>
-        <label>Конечная станция:</label>
-        <%= select_tag :last_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:last_station_id]) %>
-      </p>
-    </div>
-
+    <label>Начальная станция:</label>
+    <%= select_tag :first_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:first_station_id]) %>
+    <br /><br />
+    <label>Конечная станция:</label>
+    <%= select_tag :last_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:last_station_id]) %>
+    <br /><br />
     <%= submit_tag 'Поиск' %>
   <% end %>
-
+</div>
+<hr>
+<div>
   <% if @trains.present? %>
     <h2>Список поездов</h2>
-    <table>
+    <table class="table table-striped">
       <thead>
-        <tr>
-          <td><b>Номер</b></td>
-          <td><b>Маршрут</b></td>
-          <td><b>Время отправления</b></td>
-          <td><b>Время прибытия</b></td>
-          <td></td>
-        </tr>
+        <th>Номер</th>
+        <th>Маршрут</th>
+        <th>Время отправления</th>
+        <th>Время прибытия</th>
+        <th></th>
       </thead>
 
       <tbody>
@@ -54,3 +49,4 @@
     <% else %>
       По данному направлению билетов не найдено!
   <% end %>
+</div>

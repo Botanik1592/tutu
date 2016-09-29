@@ -23,11 +23,11 @@
 <div>
   <h3>Вагоны:</h3>
   <% if @train.wagons.present? %>
-    <table>
-    <tr>
-      <td><b>№</b></td>
-      <td><b>Тип вагона</b></td>
-    </tr>
+    <table class="table table-striped">
+    <thead>
+      <th>№</th>
+      <th>Тип вагона</th>
+    </thead>
       <% @train.wagons_order.each do |wagon| %>
         <tr>
           <td><%= link_to wagon.number, admin_wagon_path(wagon) %></td>
@@ -45,14 +45,14 @@
 
 <div>
   <h3>Места:</h3>
-  <table>
+  <table class="table table-striped">
     <tr>
-      <td><b>Тип вагонов</b></td>
-      <td><b>Кол-во верхних мест</b></td>
-      <td><b>Кол-во нижних мест</b></td>
-      <td><b>Кол-во боковых верхних мест</b></td>
-      <td><b>Кол-во боковых нижних мест</b></td>
-      <td><b>Кол-во сидячих мест</b></td>
+      <th>Тип вагонов</th>
+      <th>Кол-во верхних мест</th>
+      <th>Кол-во нижних мест</th>
+      <th>Кол-во боковых верхних мест</th>
+      <th>Кол-во боковых нижних мест</th>
+      <th>Кол-во сидячих мест</th>
     </tr>
      <% if @train.wagons.present? %>
       <% WagonType.all.each do |wagon| %>
@@ -68,7 +68,6 @@
      <% end %>
   </table>
 </div>
-<br />
 <hr>
 
 <%= link_to 'Редактировать', edit_admin_train_path(@train) %> |

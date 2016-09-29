@@ -52,10 +52,7 @@
         </div><!-- /.container-fluid -->
       </nav>
 
-      <div>
-        <% if user_signed_in? %>
-          <p>Привет, <%= current_user.name %>!</p>
-        <% end %>
+      <div class="container">
         <% if notice.present? %>
           <div id="notice" class="alert alert-success" role="alert"><%= notice %></div>
         <% end %>
@@ -65,13 +62,15 @@
         <%= yield %>
       </div>
 
-      <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="container" style="text-align: center;">
-          <p class="navbar-text" style="width: 100%; text-align: center;">
-          <font color="e7e7e7">(c) 2016 <a href='http://buryka.ru/' target='_blank' class="footer">Anton Buryka</a>. Учебный проект в <a href='http://thinknetica.com' target='_blank' class="footer">онлайн-школе Thinknetica.</a></font>
-          </p>
-        </div>
-      </nav>
+      <div class="navbar-header">
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+          <div class="container" style="text-align: center;">
+            <p class="navbar-text" style="width: 100%; text-align: center;">
+            <font color="e7e7e7">(c) 2016 <a href='http://buryka.ru/' target='_blank' class="footer">Anton Buryka</a>. Учебный проект в <a href='http://thinknetica.com' target='_blank' class="footer">онлайн-школе Thinknetica.</a></font>
+            </p>
+          </div>
+        </nav>
+      </div>
 
     </div>
   </body>

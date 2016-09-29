@@ -23,13 +23,13 @@
   <% if @route.railway_stations.empty? %>
     Станции не назначены
   <% else %>
-    <table>
-    <tr>
-      <td><b>Название станции</b></td>
-      <td><b>Порядковый номер в маршруте</b></td>
-      <td><b>Время прибытия</b></td>
-      <td><b>Время отправления</b></td>
-    </tr>
+    <table class="table table-striped">
+    <thead>
+      <th>Название станции</th>
+      <th>Порядковый номер в маршруте</th>
+      <th>Время прибытия</th>
+      <th>Время отправления</th>
+    </thead>
     <% @route.railway_stations.ordered.each do |station| %>
       <tr>
         <td><%= link_to station.title, edit_admin_railway_station_path(station) %></td>
