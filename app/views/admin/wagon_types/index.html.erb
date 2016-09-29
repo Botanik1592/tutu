@@ -1,0 +1,22 @@
+<div class="page-header">
+  <h1>Типы вагонов <small></small></h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Тип</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @wagon_types %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Создать тип', new_admin_wagon_type_path %><br />
+

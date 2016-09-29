@@ -1,0 +1,8 @@
+<div class="page-header">
+  <h1>Редактирование вагона <small></small></h1>
+</div>
+
+<%= render 'form', wagon: @wagon %>
+
+<%= link_to 'Показать', admin_wagon_path(@wagon) %><br />
+<%= link_to 'Назад', [:admin, @wagon.train] %>

@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h1>Список билетов <small></small></h1>
+</div>
+
+  <table class="table table-striped">
+    <thead>
+      <th>ФИО</th>
+      <th>Паспорт</th>
+      <th>Номер поезда</th>
+      <th>Маршрут</th>
+      <th>Станция отправления</th>
+      <th>Станция назначения</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </thead>
+
+    <tbody>
+      <% @tickets.each do |ticket| %>
+      <tr align="center">
+        <td><%= ticket.user_name %></td>
+        <td><%= ticket.passport %></td>
+        <td><%= ticket.train.number %></td>
+        <td><%= ticket.train.route.name %></td>
+        <td><%= ticket.train.route.railway_stations.first.title %></td>
+        <td><%= ticket.train.route.railway_stations.last.title %></td>
+        <td><%= link_to 'Показать', [:admin, ticket] %></td>
+        <td><%= link_to 'Редактировать', edit_admin_ticket_path(ticket) %></td>
+        <td><%= link_to 'Удалить', [:admin, ticket], method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>

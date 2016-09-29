@@ -1,0 +1,8 @@
+<div class="page-header">
+  <h1>Редактирование станции <small></small></h1>
+</div>
+
+<%= render 'form', railway_station: @railway_station %>
+
+<%= link_to 'Показать', [:admin, @railway_station] %> |
+<%= link_to 'Назад', admin_railway_stations_path %>

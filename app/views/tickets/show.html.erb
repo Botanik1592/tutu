@@ -1,25 +1,24 @@
-<h1>Билет</h1>
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <h1>Билет <small></small></h1>
+</div>
 <p>
-  <table border='1'>
+  <table class="table table-striped">
     <thead>
-      <tr align="center">
-        <td><b>Номер билета</b></td>
-        <td><b>ФИО</b></td>
-        <td><b>Паспорт</b></td>
-        <td><b>Номер поезда</b></td>
-        <td><b>Маршрут</b></td>
-        <td><b>Станция отправления</b></td>
-        <td><b>Станция назначения</b></td>
-        <td><b>Время отправления</b></td>
-        <td><b>Время прибытия</b></td>
-      </tr>
+      <th>ФИО</th>
+      <th>Email</th>
+      <th>Паспорт</th>
+      <th>Номер поезда</th>
+      <th>Маршрут</th>
+      <th>Станция отправления</th>
+      <th>Станция назначения</th>
+      <th>Время отправления</th>
+      <th>Время прибытия</th>
     </thead>
 
     <tbody>
       <tr align="center">
-        <td><%= @ticket.number %></td>
         <td><%= @ticket.user_name %></td>
+        <td><%= @ticket.user.email %></td>
         <td><%= @ticket.passport %></td>
         <td><%= @ticket.train.number %></td>
         <td><%= @ticket.train.route.name %></td>

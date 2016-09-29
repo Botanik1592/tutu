@@ -2,54 +2,76 @@
 <html>
   <head>
     <title>Tutu</title>
+
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div class="header">
-      <table border="0" cellpadding="5px", cellspacing="0px">
-        <tr>
-          <td>
-            <%= link_to 'Главная', root_path %>
-          </td>
-          <td>|</td>
-          <td>
-            <%= link_to 'Станции', railway_stations_path %>
-          </td>
-          <td>|</td>
-          <td>
-            <%= link_to 'Поезда', trains_path %>
-          </td>
-          <td>|</td>
-          <td>
-            <%= link_to 'Маршруты', routes_path %>
-          </td>
-          <td>|</td>
-          <td>
-            <%= link_to 'Типы вагонов', wagon_types_path %>
-          </td>
-          <td>|</td>
-          <td>
-            <%= link_to 'Поиск', search_path %>
-          </td>
-        </tr>
-      </table>
-    </div>
-
+  <body style="padding-bottom: 70px;">
     <div class="container">
-      <div rel="main">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><%= link_to 'Главная', root_path %></li>
+              <% if user_signed_in? %>
+                <li><%= link_to 'Билеты', tickets_path %></li>
+              <% end %>
+              <li><%= link_to 'Поиск', search_path %></li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <% if user_signed_in? %>
+                <li><p class="navbar-text">Привет, <%= current_user.name %>!</p></li>
+                <li><%= link_to current_user.email, edit_user_registration_path %></li>
+                <% if current_user.admin? %>
+                  <li><%= link_to 'Админ-Панель', admin_panel_path %></li>
+                <% end %>
+                <li><%= link_to 'Выход', destroy_user_session_path, method: :delete %></li>
+              <% else %>
+                <li><%= link_to 'Вход', new_user_session_path %></li>
+              <% end %>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+      <div>
+        <% if notice.present? %>
+          <div id="notice" class="alert alert-success" role="alert"><%= notice %></div>
+        <% end %>
+        <% if alert.present? %>
+          <div class="alert alert-danger" role="alert"><%= alert %></div>
+        <% end %>
         <%= yield %>
       </div>
-    </div>
 
-    <div class="footer">
+      <div class="navbar-header">
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+          <div class="container" style="text-align: center;">
+            <p class="navbar-text" style="width: 100%; text-align: center;">
+            <font color="e7e7e7">(c) 2016 <a href='http://buryka.ru/' target='_blank' class="footer">Anton Buryka</a>. Учебный проект в <a href='http://thinknetica.com' target='_blank' class="footer">онлайн-школе Thinknetica.</a></font>
+            </p>
+          </div>
+        </nav>
+      </div>
 
-        (c) 2016 <a href='http://buryka.ru/' target='_blank'>Anton Buryka</a>. Учебный проект в <a href='http://thinknetica.com' target='_blank'>онлайн-школе Thinknetica.</a>
-
-    </div>
     </div>
   </body>
 </html>

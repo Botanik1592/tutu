@@ -1,0 +1,38 @@
+<div class="page-header">
+  <h1>Билеты <small>список ваших билетов</small></h1>
+</div>
+<p>
+  <table class="table table-striped">
+    <thead>
+      <th>ФИО</th>
+      <th>Email</th>
+      <th>Паспорт</th>
+      <th>Номер поезда</th>
+      <th>Маршрут</th>
+      <th>Станция отправления</th>
+      <th>Станция назначения</th>
+      <th>Время отправления</th>
+      <th>Время прибытия</th>
+      <th colspan="2"></th>
+    </thead>
+
+    <tbody>
+      <% current_user.tickets.each do |ticket| %>
+      <tr align="center">
+        <td><%= ticket.user_name %></td>
+        <td><%= ticket.user.email %></td>
+        <td><%= ticket.passport %></td>
+        <td><%= ticket.train.number %></td>
+        <td><%= ticket.train.route.name %></td>
+        <td><%= ticket.train.route.railway_stations.first.title %></td>
+        <td><%= ticket.train.route.railway_stations.last.title %></td>
+        <td><%= ticket.train.route.railway_stations.first.arrival_time(ticket.train.route).try(:strftime, "%H:%M") %></td>
+        <td><%= ticket.train.route.railway_stations.first.departure_time(ticket.train.route).try(:strftime, "%H:%M") %></td>
+        <td><%= link_to 'Показать', ticket %></td>
+        <td><%= link_to 'Удалить', ticket, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
+

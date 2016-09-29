@@ -1,0 +1,27 @@
+<div class="page-header">
+  <h1>Билет <small></small></h1>
+</div>
+<p>
+  <table class="table table-striped">
+    <thead>
+      <th>ФИО</th>
+      <th>Паспорт</th>
+      <th>Номер поезда</th>
+      <th>Маршрут</th>
+      <th>Станция отправления</th>
+      <th>Станция назначения</th>
+    </thead>
+
+    <tbody>
+      <tr align="center">
+        <td><%= @ticket.user_name %></td>
+        <td><%= @ticket.passport %></td>
+        <td><%= @ticket.train.number %></td>
+        <td><%= @ticket.train.route.name %></td>
+        <td><%= @ticket.train.route.railway_stations.first.title %></td>
+        <td><%= @ticket.train.route.railway_stations.last.title %></td>
+      </tr>
+    </tbody>
+  </table>
+</p>
+
