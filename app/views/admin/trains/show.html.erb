@@ -1,7 +1,6 @@
-<div>
-  <h2>Поезд № <%= @train.number %></h2>
+<div class="page-header">
+  <h1>Поезд № <%= @train.number %> <small></small></h1>
 </div>
-
 <div>
   <h3>Текущая станция:</h3>
   <% if @train.current_station.present? %>

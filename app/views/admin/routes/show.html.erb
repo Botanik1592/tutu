@@ -1,7 +1,7 @@
-<div>
-  <h2><%= @route.name %></h2>
+<div class="page-header">
+  <h1><%= @route.name %> <small></small></h1>
 </div>
-<hr>
+
 <div>
   <h3>Поезда на маршруте:</h3>
   <% if @route.trains.empty? %>
