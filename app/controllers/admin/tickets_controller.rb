@@ -8,9 +8,6 @@ class Admin::TicketsController < Admin::BaseController
   def show
   end
 
-  def new
-  end
-
   def edit
   end
 

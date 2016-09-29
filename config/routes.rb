@@ -24,8 +24,7 @@ Rails.application.routes.draw do
     resources :users
     resources :tickets
 
-    get 'adminpanel/index'
-    root 'adminpanel#index'
+    resource :panel, only: [:show]
   end
 
   get 'welcome/index'

@@ -41,7 +41,7 @@
                 <li><p class="navbar-text">Привет, <%= current_user.name %>!</p></li>
                 <li><%= link_to current_user.email, edit_user_registration_path %></li>
                 <% if current_user.admin? %>
-                  <li><%= link_to 'Админ-Панель', admin_adminpanel_index_path %></li>
+                  <li><%= link_to 'Админ-Панель', admin_panel_path %></li>
                 <% end %>
                 <li><%= link_to 'Выход', destroy_user_session_path, method: :delete %></li>
               <% else %>

@@ -3,8 +3,6 @@
   <head>
     <title>TuTu - Административная панель</title>
 
-
-
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
@@ -29,7 +27,7 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li><%= link_to 'Сайт', root_path %></li>
-              <li><%= link_to 'Админка', admin_adminpanel_index_path %></li>
+              <li><%= link_to 'Админка', admin_panel_path %></li>
               <li><%= link_to 'Станции', admin_railway_stations_path %></li>
               <li><%= link_to 'Поезда', admin_trains_path %></li>
               <li><%= link_to 'Маршруты', admin_routes_path %></li>
