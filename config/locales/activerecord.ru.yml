@@ -1,0 +1,58 @@
+ru:
+  activerecord:
+    errors:
+      messages:
+        blank: "Поле «%{attribute}» не может быть пустым"
+    models:
+      railway_station: 'Станция'
+      train: 'Поезд'
+      route: 'Маршрут'
+      search: 'Поиск'
+      ticket: 'Билет'
+      user: 'Пользователь'
+      wagon: 'Вагон'
+      wagon_type: 'Тип вагона'
+      coupe_wagon: 'Купейный вагон'
+      economy_wagon: 'Плацкартный вагон'
+      vip_wagon: 'Вагон СВ'
+      seats_wagon: 'Сидячий вагон'
+      user: "Пользователь"
+    attributes:
+      railway_station:
+        title: "Название"
+      route:
+        name: "Название"
+        railway_station_ids: "Станции маршрута"
+      ticket:
+        first_station: "Начальная станция"
+        last_station: "Конечная станция"
+        user_name: "Имя пассажира"
+        passport: "Номер паспорта"
+      train:
+        number: "Номер"
+        head: "Нумерация вагонов с хвоста поезда"
+        current_station: "Текущая станция"
+        route: "Маршрут"
+      user:
+        name: "Имя"
+        last_name: "Фамилия"
+      wagon:
+        type: "Тип"
+        top_places: "Верхние"
+        lower_places: "Нижние"
+        side_top_places: "Верхние боковые"
+        side_lower_places: "Нижние боковые"
+        seats: "Сидения"
+        number: "Номер"
+      search:
+        first_station_id: "Начальная станция"
+        last_station_id: "Конечная станция"
+      wagon_type:
+        title: "Название"
+        wagon_type: "Тип вагона"
+      user:
+        name: "Имя"
+        last_name: "Фамилия"
+        email: "Email"
+
+

@@ -3,12 +3,12 @@
     <%= f.hidden_field :train_id %>
     <%= f.hidden_field :first_station_id %>
     <%= f.hidden_field :last_station_id %>
-    <%= f.label :user_name, "ФИО:" %>
+    <%= f.label :user_name%>
     <%= f.text_field :user_name %>
     <br /><br />
-    <%= f.label :passport, "Паспорт (серия/номер):" %>
+    <%= f.label :passport%>
     <%= f.text_field :passport %>
     <br /><br />
-    <%= f.submit 'Отправить'%>
+    <%= f.submit t('common.update'), class: "btn btn-primary" %>
   <% end %>
 

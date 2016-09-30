@@ -1,12 +1,12 @@
 <div class="page-header">
-  <h1>Типы вагонов <small></small></h1>
+  <h1><% t('.title') %> <small></small></h1>
 </div>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Название</th>
-      <th>Тип</th>
+      <th><%= t('admin.wagon_types.attributes.name') %></th>
+      <th><%= t('admin.wagon_types.attributes.type') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,5 +18,5 @@
 
 <br>
 
-<%= link_to 'Создать тип', new_admin_wagon_type_path %><br />
+<%= link_to t('common.add'), new_admin_wagon_type_path, class: "btn btn-primary" %><br />
 

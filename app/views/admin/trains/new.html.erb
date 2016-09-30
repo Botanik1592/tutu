@@ -1,7 +1,7 @@
 <div class="page-header">
-  <h1>Новый поезд <small></small></h1>
+  <h1><%= t('.title') %> <small></small></h1>
 </div>
 
 <%= render 'form', train: @train %>
 
-<%= link_to 'Назад', admin_trains_path %>
+<%= link_to t('common.back'), admin_trains_path %>

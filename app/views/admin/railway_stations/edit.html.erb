@@ -1,8 +1,8 @@
 <div class="page-header">
-  <h1>Редактирование станции <small></small></h1>
+  <h1><%= t('.title') %> <small></small></h1>
 </div>
 
 <%= render 'form', railway_station: @railway_station %>
 
-<%= link_to 'Показать', [:admin, @railway_station] %> |
-<%= link_to 'Назад', admin_railway_stations_path %>
+<%= link_to t('common.show'), [:admin, @railway_station] %> |
+<%= link_to t('common.back'), admin_railway_stations_path %>

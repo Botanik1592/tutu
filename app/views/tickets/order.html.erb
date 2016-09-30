@@ -1,14 +1,14 @@
 <div class="page-header">
-  <h1>Заказ <small>оформление</small></h1>
+  <h1><%= t('.title') %> <small><%= t('.header') %></small></h1>
 </div>
 <div>
-  <h2>Параметры заказа</h2>
+  <h2><%= t('.param') %></h2>
   <table class="table table-striped">
     <thead>
-      <th>Поезд №</th>
-      <th>Маршрут</th>
-      <th>Станция отправления</th>
-      <th>Станция назначения</th>
+      <th><%= t('admin.trains.show.title') %></th>
+      <th><%= t('admin.trains.attributes.route') %></th>
+      <th><%= t('admin.tickets.attributes.first_station') %></th>
+      <th><%= t('admin.tickets.attributes.last_station') %></th>
     </thead>
     <tbody>
     <tr align="center">
@@ -21,7 +21,7 @@
   </table>
 </div>
 <div>
-  <h2>Данные пассажира</h2>
+  <h2><%= t('.passenger') %></h2>
   <%= render 'form' %>
 </div>
 
