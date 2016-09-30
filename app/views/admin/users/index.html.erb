@@ -1,15 +1,14 @@
 <div class="page-header">
-  <h1>Список пользователей <small></small></h1>
+  <h1><%= t('.title') %> <small></small></h1>
 </div>
 
 <table class="table table-striped">
   <thead>
-    <th>Индекс</th>
-    <th>Имя</th>
-    <th>Фамилия</th>
-    <th>Email</th>
-    <th>Редактировать</th>
-    <th>Удалить</th>
+    <th><%= t('admin.users.attributes.index') %></th>
+    <th><%= t('admin.users.attributes.name') %></th>
+    <th><%= t('admin.users.attributes.last_name') %></th>
+    <th><%= t('admin.users.attributes.email') %></th>
+    <th collspan="2"></th>
   </thead>
   <% @users.each_with_index do |user, i| %>
     <tr>
@@ -17,8 +16,8 @@
       <td><%= user.name %></td>
       <td><%= user.last_name %></td>
       <td><%= user.email %></td>
-      <td><%= link_to 'Редактировать', edit_admin_user_path(user) %></td>
-      <td><%= link_to 'Удалить', [:admin, user], method: :delete, data: { confirm: 'Are you sure?' }%></td>
+      <td><%= link_to t('common.edit'), edit_admin_user_path(user) %></td>
+      <td><%= link_to t('common.delete'), [:admin, user], method: :delete, data: { confirm: t('common.confirm') }%></td>
     </tr>
   <% end %>
 </table>

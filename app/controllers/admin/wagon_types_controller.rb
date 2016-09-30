@@ -19,7 +19,7 @@ class Admin::WagonTypesController < Admin::BaseController
     @wagon_type = WagonType.new(wagon_type_params)
 
     if @wagon_type.save
-      redirect_to admin_wagon_types_url, notice: 'Тип успешно создан.'
+      redirect_to admin_wagon_types_url, notice: t('.notice')
     else
       render :new
     end
@@ -31,7 +31,7 @@ class Admin::WagonTypesController < Admin::BaseController
 
   def destroy
     @wagon_type.destroy
-      redirect_to admin_wagon_types_url, notice: 'Тип успешно удален'
+      redirect_to admin_wagon_types_url, notice: t('.notice')
   end
 
   private

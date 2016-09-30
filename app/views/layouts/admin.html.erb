@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TuTu - Административная панель</title>
+    <title>TuTu - <%= t('admin.nav.title') %></title>
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -26,14 +26,14 @@
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li><%= link_to 'Сайт', root_path %></li>
-              <li><%= link_to 'Админка', admin_panel_path %></li>
-              <li><%= link_to 'Станции', admin_railway_stations_path %></li>
-              <li><%= link_to 'Поезда', admin_trains_path %></li>
-              <li><%= link_to 'Маршруты', admin_routes_path %></li>
-              <li><%= link_to 'Типы вагонов', admin_wagon_types_path %></li>
-              <li><%= link_to 'Билеты', admin_tickets_path %></li>
-              <li><%= link_to 'Пользователи', admin_users_path %></li>
+              <li><%= link_to t('admin.nav.site'), root_path %></li>
+              <li><%= link_to t('admin.nav.admin'), admin_panel_path %></li>
+              <li><%= link_to t('admin.nav.stations'), admin_railway_stations_path %></li>
+              <li><%= link_to t('admin.nav.trains'), admin_trains_path %></li>
+              <li><%= link_to t('admin.nav.routes'), admin_routes_path %></li>
+              <li><%= link_to t('admin.nav.wagon_types'), admin_wagon_types_path %></li>
+              <li><%= link_to t('admin.nav.tickets'), admin_tickets_path %></li>
+              <li><%= link_to t('admin.nav.users'), admin_users_path %></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -41,10 +41,10 @@
                 <% if user_signed_in? %>
                   <ul class="nav navbar-nav">
                     <li><%= link_to current_user.email, edit_user_registration_path %></li>
-                    <li><%= link_to 'Выход', destroy_user_session_path, method: :delete %></li>
+                    <li><%= link_to t('admin.nav.exit'), destroy_user_session_path, method: :delete %></li>
                   </ul>
                 <% else %>
-                  <%= link_to 'Вход', new_user_session_path %>
+                  <%= link_to t('admin.nav.enter'), new_user_session_path %>
                 <% end %>
               </li>
             </ul>

@@ -9,6 +9,6 @@
   </div>
 
   <div>
-    <%= f.submit "#{ @wagon_type.new_record? ? 'Создать' : 'Изменить' }" %>
+    <%= f.submit t('.submit', action: @wagon_type.new_record? ? 'Создать' : 'Изменить'), class: 'btn btn-primary' %>
   </div>
 <% end %>

@@ -19,7 +19,7 @@ class Admin::RoutesController < Admin::BaseController
     @route = Route.new(route_params)
 
     if @route.save
-      redirect_to admin_route_path(@route), notice: 'Маршрут успешно создан.'
+      redirect_to admin_route_path(@route), notice: t('.notice')
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::RoutesController < Admin::BaseController
 
   def update
     if @route.update(route_params)
-      redirect_to admin_route_path(@route), notice: 'Маршрут успешно обновлен.'
+      redirect_to admin_route_path(@route), notice: t('.notice')
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class Admin::RoutesController < Admin::BaseController
 
   def destroy
     @route.destroy
-    redirect_to admin_routes_url, notice: 'Маршрут успешно удален.'
+    redirect_to admin_routes_url, notice: t('.notice')
   end
 
   private

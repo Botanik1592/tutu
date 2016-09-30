@@ -13,12 +13,13 @@ ru:
       economy_wagon: 'Плацкартный вагон'
       vip_wagon: 'Вагон СВ'
       seats_wagon: 'Сидячий вагон'
+      user: "Пользователь"
     attributes:
       railway_station:
         title: "Название"
       route:
         name: "Название"
-        railway_station_ids: "Станции"
+        railway_station_ids: "Станции маршрута"
       ticket:
         first_station: "Начальная станция"
         last_station: "Конечная станция"
@@ -40,4 +41,15 @@ ru:
         side_lower_places: "Нижние боковые"
         seats: "Сидения"
         number: "Номер"
+      search:
+        first_station_id: "Начальная станция"
+        last_station_id: "Конечная станция"
+      wagon_type:
+        title: "Название"
+        wagon_type: "Тип вагона"
+      user:
+        name: "Имя"
+        last_name: "Фамилия"
+        email: "Email"
+
 

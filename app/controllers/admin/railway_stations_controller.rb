@@ -20,7 +20,7 @@ class Admin::RailwayStationsController < Admin::BaseController
     @railway_station = RailwayStation.new(railway_station_params)
 
     if @railway_station.save
-      redirect_to admin_railway_station_path(@railway_station), notice: 'Станция успешно создана.'
+      redirect_to admin_railway_station_path(@railway_station), notice: t('.notice')
     else
       render :new
     end
@@ -28,7 +28,7 @@ class Admin::RailwayStationsController < Admin::BaseController
 
   def update
     if @railway_station.update(railway_station_params)
-      redirect_to admin_railway_station_path(@railway_station), notice: 'Станция успешно обновлена.'
+      redirect_to admin_railway_station_path(@railway_station), notice: t('.notice')
     else
       render :edit
     end
@@ -54,7 +54,7 @@ class Admin::RailwayStationsController < Admin::BaseController
 
   def destroy
     @railway_station.destroy
-      redirect_to admin_railway_stations_url, notice: 'Станция успешно удалена'
+      redirect_to admin_railway_stations_url, notice: t('.notice')
   end
 
   private

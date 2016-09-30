@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tutu</title>
+    <title>Tutu - <%= t('nav.title') %></title>
 
 
 
@@ -28,11 +28,11 @@
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li><%= link_to 'Главная', root_path %></li>
+              <li><%= link_to t('nav.home'), root_path %></li>
               <% if user_signed_in? %>
-                <li><%= link_to 'Билеты', tickets_path %></li>
+                <li><%= link_to t('nav.tickets'), tickets_path %></li>
               <% end %>
-              <li><%= link_to 'Поиск', search_path %></li>
+              <li><%= link_to t('nav.search'), search_path %></li>
 
             </ul>
 
@@ -41,11 +41,11 @@
                 <li><p class="navbar-text">Привет, <%= current_user.name %>!</p></li>
                 <li><%= link_to current_user.email, edit_user_registration_path %></li>
                 <% if current_user.admin? %>
-                  <li><%= link_to 'Админ-Панель', admin_panel_path %></li>
+                  <li><%= link_to t('admin.nav.admin'), admin_panel_path %></li>
                 <% end %>
-                <li><%= link_to 'Выход', destroy_user_session_path, method: :delete %></li>
+                <li><%= link_to t('nav.exit'), destroy_user_session_path, method: :delete %></li>
               <% else %>
-                <li><%= link_to 'Вход', new_user_session_path %></li>
+                <li><%= link_to t('nav.enter'), new_user_session_path %></li>
               <% end %>
             </ul>
           </div><!-- /.navbar-collapse -->

@@ -1,18 +1,18 @@
 <div class="page-header">
-  <h1>Билеты <small>список ваших билетов</small></h1>
+  <h1><%= t('.title') %> <small><%= t('.header') %></small></h1>
 </div>
 <p>
   <table class="table table-striped">
     <thead>
-      <th>ФИО</th>
-      <th>Email</th>
-      <th>Паспорт</th>
-      <th>Номер поезда</th>
-      <th>Маршрут</th>
-      <th>Станция отправления</th>
-      <th>Станция назначения</th>
-      <th>Время отправления</th>
-      <th>Время прибытия</th>
+      <th><%= t('.fio') %></th>
+      <th><%= t('.email') %></th>
+      <th><%= t('.passport') %></th>
+      <th><%= t('.train') %></th>
+      <th><%= t('.route') %></th>
+      <th><%= t('.first_station') %></th>
+      <th><%= t('.last_station') %></th>
+      <th><%= t('.arrival_time') %></th>
+      <th><%= t('.departure_time') %></th>
       <th colspan="2"></th>
     </thead>
 
@@ -28,8 +28,8 @@
         <td><%= ticket.train.route.railway_stations.last.title %></td>
         <td><%= ticket.train.route.railway_stations.first.arrival_time(ticket.train.route).try(:strftime, "%H:%M") %></td>
         <td><%= ticket.train.route.railway_stations.first.departure_time(ticket.train.route).try(:strftime, "%H:%M") %></td>
-        <td><%= link_to 'Показать', ticket %></td>
-        <td><%= link_to 'Удалить', ticket, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        <td><%= link_to t('common.show'), ticket %></td>
+        <td><%= link_to t('common.delete'), ticket, method: :delete, data: { confirm: t('common.confirm') } %></td>
       </tr>
       <% end %>
     </tbody>

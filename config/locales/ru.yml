@@ -1,2 +1,216 @@
 ru:
   hello: "Привет"
+
+  common:
+    back: "Назад"
+    add: "Добавить"
+    show: "Показать"
+    edit: "Редактировать"
+    delete: "Удалить"
+    update: "Обновить"
+    ok: "Оформить"
+    confirm: "Вы уверены?"
+    not_set:
+      route: "Маршрут не назначены"
+      wagon: "Вагоны не добавлены"
+      station: "Станция не назначена"
+      stations: "Станции не назначены"
+      trains: "Поезда отсутствуют"
+
+  nav:
+    home: "Главная"
+    title: "Заказ билетов"
+    tickets: "Билеты"
+    search: "Поиск билетов"
+    enter: "Вход"
+    exit: "Выход"
+
+  tickets:
+    index:
+      title: "Билеты"
+      header: "список ваших билетов"
+      fio: "ФИО"
+      email: "Email"
+      passport: "Паспорт"
+      train: "Номер поезда"
+      route: "Маршрут"
+      first_station: "Станция отправления"
+      last_station: "Станция назначения"
+      arrival_time: "Время отправления"
+      departure_time: "Время прибытия"
+    order:
+      title: "Заказ"
+      header: "оформление"
+      param: "Параметры заказа"
+      passenger: "Данные пассажира"
+    attributes:
+      fio: "ФИО"
+      passport: "Паспорт"
+      route: "Маршрут"
+      first_station: "Станция отправления"
+      last_station: "Станция назначения"
+    show:
+      title: "Билет"
+    edit:
+      title: "Редактирование билета"
+
+  searches:
+    show:
+      title: "Поиск билетов"
+      trains_list: "Список поездов"
+      first_station: "Станция отправления"
+      last_station: "Станция прибытия"
+      submit: "Поиск"
+    attributes:
+      no_tickets: "По данному направлению билеты не найдены!"
+
+
+  admin:
+    trains:
+      index:
+        title: "Поезда"
+        number: "Номер"
+      new:
+        title: "Новый поезд"
+      edit:
+        title: "Редактировать поезд"
+      show:
+        title: "Поезд №"
+        add_wagon: "Добавить вагон"
+        wagons: "Вагоны"
+      create:
+        notice: "Поезд успешно добавлен!"
+      update:
+        notice: "Поезд успешно обновлен!"
+      destroy:
+        notice: "Поезд успешно удален."
+      form:
+        submit: "%{action} поезд"
+      attributes:
+        number: "Номер"
+        route: "Маршрут"
+        current_station: "Текущая станция"
+
+    wagons:
+      index:
+        title: "Вагоны"
+      show:
+        places: "Места"
+      attributes:
+        number: "Номер"
+        type: "Тип вагона"
+      create:
+        notice: "Вагон успешно добавлен!"
+      update:
+        notice: "Вагон успешно обновлен!"
+      destroy:
+        notice: "Вагон успешно удален!"
+      count:
+        top_places: "Кол-во верхних мест"
+        lower_places: "Кол-во нижних мест"
+        side_top_places: "Кол-во боковых верхних мест"
+        side_lower_places: "Кол-во боковых нижних мест"
+        seats: "Кол-во сидячих мест"
+
+    railway_stations:
+      index:
+        title: "Станции"
+      new:
+        title: "Новая станция"
+      edit:
+        title: "Редактировать станцию"
+      show:
+        title: "Станция"
+      create:
+        notice: "Станция успешно добавлена!"
+      update:
+        notice: "Станция успешно обновлена!"
+      destroy:
+        notice: "Станция успешно удалена."
+      form:
+        submit: "%{action} станцию"
+      attributes:
+        title: "Название"
+        position: "Порядковый номер"
+        arrival_time: "Время прибытия"
+        departure_time: "Время отправления"
+        trains_on_station: "Поезда на станции"
+      on_route: "Входит в маршруты"
+
+    routes:
+      index:
+        title: "Маршруты"
+        name: "Название"
+      show:
+        trains: "Поезда на маршруте"
+      edit:
+        title: "Редактирование маршрута"
+      new:
+        title: "Новый маршрут"
+      form:
+        submit: "%{action} маршрут"
+      create:
+        notice: "Маршрут успешно добавлен!"
+      update:
+        notice: "Маршрут успешно обновлен!"
+      destroy:
+        notice: "Маршрут успешно удален!"
+      attributes:
+        position: "Порядковый номер"
+        arrival_time: "Время прибытия"
+        departure_time: "Время отправления"
+
+    tickets:
+      index:
+        title: "Билеты"
+      attributes:
+        fio: "ФИО"
+        passport: "Паспорт"
+        route: "Маршрут"
+        first_station: "Станция отправления"
+        last_station: "Станция назначения"
+      show:
+        title: "Билет"
+      edit:
+        title: "Редактирование билета"
+
+    wagon_types:
+      index:
+        title: "Типы вагонов"
+      form:
+        submit: "%{action} тип"
+      edit:
+        title: "Редактирование типа вагона"
+      new:
+        title: "Новый тип вагона"
+      create:
+        notice: "Тип успешно добавлен!"
+      destroy:
+        notice: "Тип успешно удален!"
+      attributes:
+        name: "Название"
+        type: "Тип"
+
+    users:
+      index:
+        title: "Пользователи"
+      edit:
+        title: "Редактирование пользователя"
+      attributes:
+        index: "Индекс"
+        name: "Имя"
+        last_name: "Фамилия"
+        email: "Email"
+
+    nav:
+      title: "Административная панель"
+      site: "Сайт"
+      admin: "Админка"
+      stations: "Станции"
+      trains: "Поезда"
+      routes: "Маршруты"
+      wagon_types: "Типы вагонов"
+      tickets: "Билеты"
+      users: "Пользователи"
+      enter: "Вход"
+      exit: "Выход"
