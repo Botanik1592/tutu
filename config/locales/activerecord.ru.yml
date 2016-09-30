@@ -1,5 +1,8 @@
 ru:
   activerecord:
+    errors:
+      messages:
+        blank: "Поле «%{attribute}» не может быть пустым"
     models:
       railway_station: 'Станция'
       train: 'Поезд'
