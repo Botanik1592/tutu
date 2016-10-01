@@ -11,17 +11,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body style="padding-bottom: 70px;">
+  <body style="padding-bottom: 70px; padding-top: 10px">
     <div class="container">
-      <nav class="navbar navbar-inverse">
+      <nav class="navbar navbar-inverse navbar-fixed-top container">
         <div class="container-fluid">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+            <a class="navbar-brand" href=<%= admin_panel_url %>><b>Админ-панель</b></a>
           </div>
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -62,13 +57,15 @@
         <%= yield %>
       </div>
 
-      <nav class="navbar navbar--inverse navbar-fixed-bottom">
-        <div class="container" style="text-align: center;">
-          <p class="navbar-text" style="width: 100%; text-align: center;">
-          <font color="e7e7e7">(c) 2016 <a href='http://buryka.ru/' target='_blank' class="footer">Anton Buryka</a>. Учебный проект в <a href='http://thinknetica.com' target='_blank' class="footer">онлайн-школе Thinknetica.</a></font>
-          </p>
-        </div>
-      </nav>
+      <div class="navbar-header">
+        <nav class="navbar navbar-inverse navbar-fixed-bottom container">
+          <div class="container" style="text-align: center;">
+            <p class="navbar-text" style="width: 100%; text-align: center;">
+            <font color="e7e7e7">&copy; 2016 <a href='http://buryka.ru/' target='_blank' class="footer"><font color="e7e7e7">Anton Buryka</font></a>. Учебный проект в <a href='http://thinknetica.com' target='_blank' class="footer"><font color="e7e7e7">онлайн-школе Thinknetica.</font></a></font>
+            </p>
+          </div>
+        </nav>
+      </div>
 
     </div>
   </body>
