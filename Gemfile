@@ -31,6 +31,7 @@ gem 'devise'
 gem 'devise-i18n'
 
 gem 'rails_12factor'
+gem 'postmark-rails', '>= 0.10.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
