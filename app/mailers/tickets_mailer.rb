@@ -3,4 +3,5 @@ class TicketsMailer < ApplicationMailer
     @user = user
     @ticket = ticket
     mail(to: @user.email, subject: "Новый заказ в сервисе билетов Tu-Tu")
+  end
 end
