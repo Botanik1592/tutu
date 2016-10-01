@@ -1,6 +1,6 @@
 <tr>
-  <td><%= railway_station.title %></td>
-  <td><%= link_to t('common.show'), [:admin, railway_station] %></td>
-  <td><%= link_to t('common.edit'), edit_admin_railway_station_path(railway_station) %></td>
-  <td><%= link_to t('common.delete'), [:admin, railway_station], method: :delete, data: { confirm: t('common.confirm') } %></td>
+  <td><h4><%= railway_station.title %></h4></td>
+  <td><%= link_to t('common.show'), [:admin, railway_station], class: "btn btn-info" %></td>
+  <td><%= link_to t('common.edit'), edit_admin_railway_station_path(railway_station), class: "btn btn-warning" %></td>
+  <td><%= link_to t('common.delete'), [:admin, railway_station], class: "btn btn-danger", method: :delete, data: { confirm: t('common.confirm') } %></td>
 </tr>

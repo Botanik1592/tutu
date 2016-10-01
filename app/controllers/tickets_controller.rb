@@ -21,7 +21,7 @@ class TicketsController < ApplicationController
 
   def destroy
     @ticket.destroy
-      redirect_to tickets_url, notice: 'Поезд успешно удален.'
+      redirect_to tickets_url, notice: 'Билет успешно удален.'
   end
 
 

@@ -1,14 +1,23 @@
 <%= form_for [:admin, wagon_type] do |f| %>
-  <%= render 'common/errors', resource: @wagon_type %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <br /><br />
-    <%= f.label :wagon_type %>
-    <%= f.text_field :wagon_type %>
-  </div>
-
-  <div>
-    <%= f.submit t('.submit', action: @wagon_type.new_record? ? 'Создать' : 'Изменить'), class: 'btn btn-primary' %>
-  </div>
-<% end %>
+<div class="row">
+    <%= render 'common/errors', resource: @wagon_type %>
+    <div class="col-md-4">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+</div>
+<div class="row">
+    <br />
+    <div class="col-md-4">
+      <%= f.label :wagon_type %>
+      <%= f.text_field :wagon_type, class: "form-control" %>
+    </div>
+</div>
+<div class="row">
+    <br />
+    <div class="col-md-4">
+      <%= f.submit t('.submit', action: @wagon_type.new_record? ? 'Создать' : 'Изменить'), class: 'btn btn-success' %>
+    </div>
+  <% end %>
+</div>
+<br />
