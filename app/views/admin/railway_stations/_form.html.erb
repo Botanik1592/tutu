@@ -1,7 +1,7 @@
 <%= render 'common/errors', resource: @railway_station %>
 <div class="row">
   <div class="col-md-4">
-    <%= form_for [:admin, railway_station] do |f| %>
+    <%= form_for [:admin, @railway_station] do |f| %>
       <div class="field">
         <%= f.label :title %>
         <%= f.text_field :title, class: 'form-control' %>
