@@ -9,25 +9,25 @@ $(document).ready(function() {
       $('.plac').hide();
       $('.sid').hide();
       $('.coupe').show();
-    };
+    }
     if (wagon_type == 'EconomyWagon') {
       $('.coupe').hide();
       $('.sv').hide();
       $('.sid').hide();
       $('.plac').show();
-    }   ;
+    }
     if (wagon_type == 'VipWagon') {
       $('.coupe').hide();
       $('.plac').hide();
       $('.sid').hide();
       $('.sv').show();
-    };
+    }
     if (wagon_type == 'SeatsWagon') {
       $('.coupe').hide();
       $('.sv').hide();
       $('.plac').hide();
       $('.sid').show();
-    };
+    }
   });
 
 })
