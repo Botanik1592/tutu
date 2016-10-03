@@ -4,5 +4,10 @@
 
 <%= render 'form', route: @route %>
 
-<%= link_to t('common.show'), [:admin, @route] %> |
-<%= link_to t('common.back'), admin_routes_path %>
+<div class="row">
+  <div class="col-md-2">
+    <%= link_to t('common.show'), [:admin, @route], class: "btn btn-info" %>  </div>
+  <div class="col-md-2">
+    <%= link_to t('common.back'), admin_routes_path, class: "btn btn-primary" %>
+  </div>
+</div>

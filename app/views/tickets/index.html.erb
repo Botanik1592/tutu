@@ -28,8 +28,8 @@
         <td><%= ticket.train.route.railway_stations.last.title %></td>
         <td><%= ticket.train.route.railway_stations.first.arrival_time(ticket.train.route).try(:strftime, "%H:%M") %></td>
         <td><%= ticket.train.route.railway_stations.first.departure_time(ticket.train.route).try(:strftime, "%H:%M") %></td>
-        <td><%= link_to t('common.show'), ticket %></td>
-        <td><%= link_to t('common.delete'), ticket, method: :delete, data: { confirm: t('common.confirm') } %></td>
+        <td><%= link_to t('common.show'), ticket, class: "btn btn-info" %></td>
+        <td><%= link_to t('common.delete'), ticket, method: :delete, data: { confirm: t('common.confirm') }, class: "btn btn-danger" %></td>
       </tr>
       <% end %>
     </tbody>

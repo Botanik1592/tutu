@@ -1,16 +1,23 @@
 <%= render 'common/errors', resource: @route %>
-<%= form_for [:admin, route] do |f| %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="filed">
-    <%= f.label :railway_station_ids %>
-    <%= f.collection_select :railway_station_ids, RailwayStation.all, :id, :title, {}, { multiple: true } %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit t('.submit', action: @route.new_record? ? 'Создать' : 'Изменить'), class: 'btn btn-primary' %>
-  </div>
-<% end %>
+<div class="row">
+  <%= form_for [:admin, route] do |f| %>
+    <div class="col-md-4">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-4">
+      <%= f.label :railway_station_ids %><br />
+      <%= f.collection_select :railway_station_ids, RailwayStation.all, :id, :title, {}, { multiple: true } %>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-4">
+      <%= f.submit t('.submit', action: @route.new_record? ? 'Создать' : 'Изменить'), class: 'btn btn-success' %>
+    </div>
+  <% end %>
+</div>
+<br />

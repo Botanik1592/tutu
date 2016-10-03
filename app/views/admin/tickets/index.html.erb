@@ -18,15 +18,15 @@
     <tbody>
       <% @tickets.each do |ticket| %>
       <tr align="center">
-        <td><%= ticket.user_name %></td>
-        <td><%= ticket.passport %></td>
-        <td><%= ticket.train.number %></td>
-        <td><%= ticket.train.route.name %></td>
-        <td><%= ticket.train.route.railway_stations.first.title %></td>
-        <td><%= ticket.train.route.railway_stations.last.title %></td>
-        <td><%= link_to t('common.show'), [:admin, ticket] %></td>
-        <td><%= link_to t('common.edit'), edit_admin_ticket_path(ticket) %></td>
-        <td><%= link_to t('common.delete'), [:admin, ticket], method: :delete, data: { confirm: t('common.confirm') } %></td>
+        <td><h5><%= ticket.user_name %></h5></td>
+        <td><h5><%= ticket.passport %></h5></td>
+        <td><h5><%= ticket.train.number %></h5></td>
+        <td><h5><%= ticket.train.route.name %></h5></td>
+        <td><h5><%= ticket.train.route.railway_stations.first.title %></h5></td>
+        <td><h5><%= ticket.train.route.railway_stations.last.title %></h5></td>
+        <td><%= link_to t('common.show'), [:admin, ticket], class: "btn btn-info" %></td>
+        <td><%= link_to t('common.edit'), edit_admin_ticket_path(ticket), class: "btn btn-warning" %></td>
+        <td><%= link_to t('common.delete'), [:admin, ticket], class: "btn btn-danger", method: :delete, data: { confirm: t('common.confirm') } %></td>
       </tr>
       <% end %>
     </tbody>

@@ -1,6 +1,6 @@
 <tr>
-  <td><%= wagon_type.title %></td>
-  <td><%= wagon_type.wagon_type %></td>
-  <td><%= link_to t('common.edit'), edit_admin_wagon_type_path(wagon_type) %></td>
-  <td><%= link_to t('common.delete'), [:admin, wagon_type], method: :delete, data: { confirm: t('common.confirm') } %></td>
+  <td><h4><%= wagon_type.title %></h4></td>
+  <td><h4><%= wagon_type.wagon_type %></h4></td>
+  <td><%= link_to t('common.edit'), edit_admin_wagon_type_path(wagon_type), class: "btn btn-warning" %></td>
+  <td><%= link_to t('common.delete'), [:admin, wagon_type], class: "btn btn-danger", method: :delete, data: { confirm: t('common.confirm') } %></td>
 </tr>

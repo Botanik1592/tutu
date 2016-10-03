@@ -29,9 +29,9 @@
     </thead>
       <% @train.wagons_order.each do |wagon| %>
         <tr>
-          <td><%= link_to wagon.number, admin_wagon_path(wagon) %></td>
-          <td><%= link_to wagon.type.to_s, admin_wagon_path(wagon) %></td>
-          <td><%= link_to t('common.delete'), admin_wagon_path(wagon), method: :delete, data: { confirm: t('common.confirm') } %></td>
+          <td><h4><%= link_to wagon.number, admin_wagon_path(wagon) %></h4></td>
+          <td><h4><%= link_to wagon.type.to_s, admin_wagon_path(wagon) %></h4></td>
+          <td><%= link_to t('common.delete'), admin_wagon_path(wagon), class: "btn btn-danger", method: :delete, data: { confirm: t('common.confirm') } %></td>
         </tr>
       <% end %>
     </table>
@@ -68,6 +68,11 @@
   </table>
 </div>
 <hr>
-
-<%= link_to t('common.edit'), edit_admin_train_path(@train) %> |
-<%= link_to t('common.back'), admin_trains_path %>
+<div class="row">
+  <div class="col-md-2">
+    <%= link_to t('common.edit'), edit_admin_train_path(@train), class: "btn btn-warning" %>
+  </div>
+  <div class="col-md-2">
+    <%= link_to t('common.back'), admin_trains_path, class: "btn btn-primary" %>
+  </div>
+  </div>
