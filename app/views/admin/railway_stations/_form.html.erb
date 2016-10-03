@@ -1,6 +1,6 @@
 <%= render 'common/errors', resource: station %>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-6">
     <% hidden = false unless local_assigns[:hidden] %>
     <%= form_for [:admin, station], html: { style: "display: #{hidden ? 'none' : 'block'}" } do |f| %>
       <div>
