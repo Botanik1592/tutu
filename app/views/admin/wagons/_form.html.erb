@@ -1,43 +1,43 @@
+<%= render 'common/errors', resource: @wagon %>
 <div class="row">
   <div class="col-md-4">
   <%= form_for [:admin, @train_wagons_path, wagon.becomes(Wagon)] do |f| %>
     <%= hidden_field_tag :train_id, @train.id %>
-    <%= render 'common/errors', resource: @wagon %>
     <%= f.label :type, "Тип:" %>
-    <%= f.collection_select :type, WagonType.all, :wagon_type, :title, class: "form-control"   %>
+    <%= f.collection_select :type, WagonType.all, :wagon_type, :title, class: "form-control" %>
   </div>
 </div>
 <br>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-4 coupe plac">
     <%= f.label :top_places, "Кол-во верхних мест:" %>
     <%= f.text_field :top_places, class: "form-control" %>
   </div>
 </div>
 <br>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-4 coupe sv plac">
     <%= f.label :lower_places, "Кол-во нижних мест:" %>
     <%= f.text_field :lower_places, class: "form-control" %>
   </div>
 </div>
 <br>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-4 plac" style="display: none;">
     <%= f.label :side_top_places, "Кол-во боковых верхних мест:" %>
     <%= f.text_field :side_top_places, class: "form-control" %>
   </div>
 </div>
 <br>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-4 plac" style="display: none;">
     <%= f.label :side_lower_places, "Кол-во боковых нижних мест:" %>
     <%= f.text_field :side_lower_places, class: "form-control" %>
   </div>
 </div>
 <br>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-4 sid" style="display: none;">
     <%= f.label :seats, "Кол-во сидячих мест:" %>
     <%= f.text_field :seats, class: "form-control" %>
   </div>
