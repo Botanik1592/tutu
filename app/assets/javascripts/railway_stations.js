@@ -1,4 +1,4 @@
-$(document).ready(function(e) {
+$(document).ready(function() {
   $('a.edit_station').click(function(e) {
     e.preventDefault();
 
