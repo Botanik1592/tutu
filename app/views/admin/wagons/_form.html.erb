@@ -7,38 +7,38 @@
     <%= f.collection_select :type, WagonType.all, :wagon_type, :title, class: "form-control" %>
   </div>
 </div>
-<br>
-<div class="row">
+<div class="row coupe plac">
+  <br>
   <div class="col-md-4 coupe plac">
-    <%= f.label :top_places, "Кол-во верхних мест:" %>
+    <%= f.label :top_places, "Кол-во верхних мест:", style: "font-weight: bold" %>
     <%= f.text_field :top_places, class: "form-control" %>
   </div>
 </div>
-<br>
-<div class="row">
+<div class="row coupe sv plac">
+  <br>
   <div class="col-md-4 coupe sv plac">
-    <%= f.label :lower_places, "Кол-во нижних мест:" %>
+    <%= f.label :lower_places, "Кол-во нижних мест:", style: "font-weight: bold" %>
     <%= f.text_field :lower_places, class: "form-control" %>
   </div>
 </div>
-<br>
-<div class="row">
+<div class="row plac">
+  <br>
   <div class="col-md-4 plac" style="display: none;">
-    <%= f.label :side_top_places, "Кол-во боковых верхних мест:" %>
+    <%= f.label :side_top_places, "Кол-во боковых верхних мест:", style: "font-weight: bold" %>
     <%= f.text_field :side_top_places, class: "form-control" %>
   </div>
 </div>
-<br>
-<div class="row">
+<div class="row plac">
+  <br>
   <div class="col-md-4 plac" style="display: none;">
-    <%= f.label :side_lower_places, "Кол-во боковых нижних мест:" %>
+    <%= f.label :side_lower_places, "Кол-во боковых нижних мест:", style: "font-weight: bold" %>
     <%= f.text_field :side_lower_places, class: "form-control" %>
   </div>
 </div>
-<br>
-<div class="row">
+<div class="row sid">
+  <br>
   <div class="col-md-4 sid" style="display: none;">
-    <%= f.label :seats, "Кол-во сидячих мест:" %>
+    <%= f.label :seats, "Кол-во сидячих мест:", style: "font-weight: bold" %>
     <%= f.text_field :seats, class: "form-control" %>
   </div>
 </div>
