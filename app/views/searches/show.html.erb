@@ -9,22 +9,17 @@
 <div class="row">
   <div class="col-md-4">
     <%= form_for search_path, method: :post do %>
-      <%= t('.first_station') %>
+      <b><%= t('.first_station') %></b>
       <%= select_tag :first_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:first_station_id]), class: 'form-control' %>
-  </div>
-  <div class="col-md-4">
-      <%= t('.last_station') %>
+      <br />
+      <b><%= t('.last_station') %></b>
       <%= select_tag :last_station_id, options_from_collection_for_select(RailwayStation.all, :id, :title, params[:last_station_id]), class: 'form-control' %>
-  </div>
-  <div class="col-md-4">
       <br />
       <%= submit_tag t('.submit'), class: "btn btn-primary" %>
-  <% end %>
+    <% end %>
   </div>
 
-</div>
-<div class="row">
-  <div class="col-md-12">
+  <div class="col-md-8">
     <% if @trains %>
       <% if @trains.present? %>
         <h2><%= t('.trains_list') %></h2>
